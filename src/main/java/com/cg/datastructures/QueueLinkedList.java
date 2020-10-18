@@ -10,6 +10,14 @@ public class QueueLinkedList {
         enqueue(70);
         LinkedList.displayList(head);
 
+        dequeue();
+        LinkedList.displayList(head);
+        dequeue();
+        LinkedList.displayList(head);
+        dequeue();
+        LinkedList.displayList(head);
+
+
     }
 
     public static void enqueue(int data){
@@ -18,5 +26,9 @@ public class QueueLinkedList {
         }else {
             LinkedList.append(head, data);
         }
+    }
+
+    public  static void dequeue(){
+        head = LinkedList.popLast(head);
     }
 }

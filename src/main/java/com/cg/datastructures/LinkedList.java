@@ -93,11 +93,15 @@ public class LinkedList {
 
     public static Node popLast(Node head) {
         Node current = head;
-        while (current.next.next != null) {
-            current = current.next;
+        if(current.next != null){
+            while (current.next.next != null) {
+                current = current.next;
 
+            }
+            current.next = null;
+        }else{
+            head = null;
         }
-        current.next = null;
         return head;
     }
 
