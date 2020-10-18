@@ -68,7 +68,7 @@ public class LinkedList {
         return head;
     }
 
-    public static Node append(Node head, Node tail, int data) {
+    public static void append(Node head, int data) {
         Node newNode = new Node(data);
         Node current = head;
         while (current.next != null) {
@@ -76,8 +76,6 @@ public class LinkedList {
         }
         current.next = newNode;
         newNode.next = null;
-        newNode = tail;
-        return tail;
     }
 
     public static void insert(Node previous, int data) {
@@ -95,11 +93,15 @@ public class LinkedList {
 
     public static Node popLast(Node head) {
         Node current = head;
-        while (current.next.next != null) {
-            current = current.next;
+        if(current.next != null){
+            while (current.next.next != null) {
+                current = current.next;
 
+            }
+            current.next = null;
+        }else{
+            head = null;
         }
-        current.next = null;
         return head;
     }
 
